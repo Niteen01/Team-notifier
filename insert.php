@@ -7,6 +7,6 @@ $tag = $_POST['tag'];
 $deadline = $_POST['deadline'];
 $time = $_POST['time'];
 
-mysqli_query($db , "INSERT INTO `lists`(`title`, `tag`, `date`, `time`, `description`) VALUES ('[$newtask]','[$tag]','[$deadline]','[$time]','[$desc]' )");
+mysqli_query($db , "INSERT INTO `lists`(`title`, `tag`, `date`, `time`, `description`) VALUES ('$newtask','$tag','$deadline','$time','$desc' )");
 
 ?>

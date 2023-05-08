@@ -38,11 +38,11 @@
             </div>
         </div>
 
-        <!-- reflecting data-------------------------------------------- -->
+<!------------------- reflecting data------------------------------------------------>
 <?php
     include "config.php";
-    $rawData = mysqli_query($db, "SELECT * FROM `lists`")
-
+    $rawData = mysqli_query($db, "SELECT * FROM `lists`");
+    include "test.php";
 ?>
         <table class="table">
             <tbody>
@@ -65,6 +65,7 @@
             </tbody>
         </table>
     </div>
+    
   
     <script src="./script.js"></script>
 </body>
