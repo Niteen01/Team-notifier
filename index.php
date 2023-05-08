@@ -20,22 +20,28 @@
         </div>
         <div class="context-box">
             <div class="upper-context-box">
-                <form>
-                    <input type="text" id="new-task" placeholder="Title">
+                <form action="insert.php" method="POST">
+                    <input type="text" name="new-task" id="new-task" placeholder="Title">
                         <label for="sort" class="sort">Tag</label>
-                        <select id = "Tags">
+                        <select name="tag" id = "Tags">
                             <option value="frontend">Frontend</option>
                             <option value="backend">Backend</option>
                         </select>
-                    <input type="date" id="deadline">
-                    <input type="time" id="reminder">
-                  </form>
+                    <input type="date" name="deadline" id="deadline">
+                    <input type="time" name="time" id="reminder">
+                    <input type="text" name="desc" id="description" placeholder="describe a bit">
+                <input type="submit" value="Add Task">
+                </form>
             </div>
             <div class="lower-context-box">
-                <input type="text" id="description" placeholder="describe a bit">
-                <input type="submit" value="Add Task">
+                
             </div>
         </div>
+        
     </div>
+    <ul>
+        <li>something frontend 02042003 14:02 njasgjklashuifgasdhuiasdhgui<li>
+    </ul>
+    <script src="./script.js"></script>
 </body>
 </html>
