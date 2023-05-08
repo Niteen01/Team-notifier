@@ -37,11 +37,35 @@
                 
             </div>
         </div>
-        
+
+        <!-- reflecting data-------------------------------------------- -->
+<?php
+    include "config.php";
+    $rawData = mysqli_query($db, "SELECT * FROM `lists`")
+
+?>
+        <table class="table">
+            <tbody>
+                <?php
+                while($row = mysqli_fetch_array($rawData)){
+                ?>
+                <tr> 
+                    <td><?php echo $row['title'] ?></td>
+                    <td><?php echo $row['tag'] ?></td>
+                    <td><?php echo $row['date'] ?></td>
+                    <td><?php echo $row['time'] ?></td>
+                    <td><?php echo $row['description'] ?></td>
+                    <td><a href="" class="progress">Inprogress</a></td>
+                    <td><a href="" class="delete">Delete</a></td>
+                    
+                </tr>    
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
     </div>
-    <ul>
-        <li>something frontend 02042003 14:02 njasgjklashuifgasdhuiasdhgui<li>
-    </ul>
+  
     <script src="./script.js"></script>
 </body>
 </html>
