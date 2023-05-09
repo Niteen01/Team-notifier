@@ -7,6 +7,7 @@ class Database{
   private $password = 'root';
   private $database = 'teamnotifierdb';
   private  $conn;
+ 
 
   public function __construct()
 	{
@@ -17,9 +18,9 @@ class Database{
 		}
 	}
 
-  public function select($table, $columns = '*', $where = '')
+  public function  select($table, $columns = '*', $where = '')
 	{
-		$sql = "SELECT $columns FROM $table";
+		 $sql = "SELECT $columns FROM $table";
 
 		if (!empty($where)) {
 			$sql .= " WHERE $where";
@@ -39,6 +40,18 @@ class Database{
 			return null;
 		}
 	}
+		
+
+	public function Insert()
+	{	
+		$desc = $_POST['desc'];
+		$newtask = $_POST['new-task'];
+		$tag = $_POST['tag'];
+		$deadline = $_POST['deadline'];
+		$time = $_POST['time'];
+		mysqli_query($this->conn , "INSERT INTO `lists`(`title`, `tag`, `date`, `time`, `description`) VALUES ('$newtask','$tag','$deadline','$time','$desc')");
+
+	}
 
 	public function close()
 	{
@@ -49,6 +62,7 @@ class Database{
 
 // Usage example:
 $db = new Database();
+$db->Insert();
 $lists = $db->select('lists', '*', 'progress = 0');
 
 foreach ($lists as $list) {
@@ -58,4 +72,3 @@ foreach ($lists as $list) {
 $db->close();
 
 ?>
-

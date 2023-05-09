@@ -20,7 +20,7 @@
         </div>
         <div class="context-box">
             <div class="upper-context-box">
-                <form action="insert.php" method="POST">
+                <form action="config.php" method="POST">
                     <input type="text" name="new-task" id="new-task" placeholder="Title">
                         <label for="sort" class="sort">Tag</label>
                         <select name="tag" id = "Tags">
@@ -30,7 +30,7 @@
                     <input type="date" name="deadline" id="deadline">
                     <input type="time" name="time" id="reminder">
                     <input type="text" name="desc" id="description" placeholder="describe a bit">
-                <input type="submit" value="Add Task">
+                <input type="submit" name="submit" value="submit">
                 </form>
             </div>
             <div class="lower-context-box">
