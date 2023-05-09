@@ -11,11 +11,10 @@ if($conn->connect_error){
     die("connection failed".$conn->connect_error);
 }
 // else{
-    // if(isset($_POST["submit"])){
-    //     echo $username = $_POST['username'];
-    //     echo $password = $_POST['password'];
-
-    // }
+//     if(isset($_POST["submit"])){
+//         echo $username = $_POST['username'];
+//         echo $password = $_POST['password'];
+//     }
 // }
 
 $sql = "INSERT INTO cred (username,password) Values('$username','$password')";
