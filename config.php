@@ -75,7 +75,7 @@ class Database{
 
 }
 
-// Usage example:
+// Use of class by creating objects:
 $db = new Database();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $new_task = $_POST['new-task'];
@@ -94,8 +94,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $db->insert('lists', $data);
 }
-
-
 
 
 
