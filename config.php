@@ -105,6 +105,6 @@ foreach ($lists as $list) {
 	echo $list['title'] . ' - ' . $list['tag'] .$list['date'] .$list['time'] . $list['description'] . '<br>';
 }
 
-$db->close();
+$db->mysqli_close();
 
 ?>
