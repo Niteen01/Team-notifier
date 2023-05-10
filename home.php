@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +13,11 @@
 <body>
     <div class="card">
         <div class="header">
-            <h1>Team Notifier</h1>
-            <button id="account">
-                account's name
-            </button>
+            <h1 id="brand">Team Notifier</h1>
+            <div>
+            <?php echo $_SESSION['name']?>
+            <a href="logout.php">Logout</a>
+            </div>
         </div>
         <div class="nav">
             <div class="see-post">See Posts</div>  

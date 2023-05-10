@@ -10,13 +10,6 @@ if (!$conn) {
 
 if (isset($_POST['uname']) && isset($_POST['password'])) {
 
-	// function validate($data){
-    //    $data = trim($data);
-	//    $data = stripslashes($data);
-	//    $data = htmlspecialchars($data);
-	//    return $data;
-	// }
-
 	$uname = $_POST['uname'];
 	$pass = $_POST['password'];
 
