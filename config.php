@@ -2,6 +2,7 @@
 
 
 
+
 // MySQL connection settings
 class Database{
   private $host = 'localhost';
@@ -42,23 +43,11 @@ class Database{
 			return null;
 		}
 	}
-	// $desc = $_POST['desc'];
-	// 	$newtask = $_POST['new-task'];
-	// 	$tag = $_POST['tag'];
-	// 	$deadline = $_POST['deadline'];
-	// 	$time = $_POST['time'];
 
-	// public function Insert()
-	// {	
-		
-	// 	mysqli_query($this->conn , "INSERT INTO `lists`(`title`, `tag`, `date`, `time`, `description`) VALUES ('$newtask','$tag','$deadline','$time','$desc')");
-
-	// }
-
-	// public function close()
-	// {
-	// 	$this->conn->close();
-	// }
+	public function close()
+	{
+		$this->conn->close();
+	}
 
 	public function insert($table, $data)
     {
@@ -75,34 +64,40 @@ class Database{
 
 }
 
+
+
+
+ 
+
 // Use of class by creating objects:
-$db = new Database();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $new_task = $_POST['new-task'];
-    $tag = $_POST['tag'];
-    $deadline = $_POST['deadline'];
-    $reminder = $_POST['reminder'];
-    $description = $_POST['description'];
+// $db = new Database();
+// $db->Insert();
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//     $new_task = $_POST['new-task'];
+//     $tag = $_POST['tag'];
+//     $deadline = $_POST['deadline'];
+//     $reminder = $_POST['reminder'];
+//     $description = $_POST['description'];
 
-    $data = array(
-        'new_task' => $new_task,
-        'tag' => $tag,
-        'deadline' => $deadline,
-        'reminder' => $reminder,
-        'description' => $description
-    );
+//     $data = array(
+//         'new_task' => $new_task,
+//         'tag' => $tag,
+//         'deadline' => $deadline,
+//         'reminder' => $reminder,
+//         'description' => $description
+//     );
 
-    $db->insert('lists', $data);
-}
+//     $db->insert('lists', $data);
+// }
 
 
 
-$lists = $db->select('lists', '*', 'progress = 0');
+// $lists = $db->select('lists', '*', 'progress = 0');
 
-foreach ($lists as $list) {
-	echo $list['title'] . ' - ' . $list['tag'] .$list['date'] .$list['time'] . $list['description'] . '<br>';
-}
+// foreach ($lists as $list) {
+// 	echo $list['title'] . ' - ' . $list['tag'] .$list['date'] .$list['time'] . $list['description'] . '<br>';
+// }
 
-$db->mysqli_close();
+// $db->mysqli_close();
 
 ?>

@@ -24,7 +24,7 @@ session_start();
         </div>
         <div class="context-box">
             <div class="upper-context-box">
-                <form action="config.php" method="POST">
+                <form action="test.php" method="POST">
                     <input type="text" name="new-task" id="new-task" placeholder="Title">
                         <label for="sort" class="sort">Tag</label>
                         <select name="tag" id = "Tags">
@@ -45,13 +45,13 @@ session_start();
 <!------------------- reflecting data------------------------------------------------>
 <?php
     include "config.php";
-    $rawData = mysqli_query($db, "SELECT * FROM `lists`");
-    include "test.php";
+    // $rawData = mysqli_query($db, "SELECT * FROM `lists`");
+    // include "test.php";
 ?>
         <table class="table">
             <tbody>
-                <?php
-                while($row = mysqli_fetch_array($rawData)){
+                <!-- <?php
+                foreach($lists as $lists){
                 ?>
                 <tr> 
                     <td><?php echo $row['title'] ?></td>
@@ -65,7 +65,7 @@ session_start();
                 </tr>    
                 <?php
                 }
-                ?>
+                ?> -->
             </tbody>
         </table>
     </div>

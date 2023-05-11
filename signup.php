@@ -39,7 +39,6 @@
                       placeholder="User Name"><br>
           <?php }?>
 
-
      	<label>Password</label>
      	<input type="password" 
                  name="password" 
