@@ -45,12 +45,12 @@ session_start();
 <!------------------- reflecting data------------------------------------------------>
 <?php
     include "config.php";
-    // $rawData = mysqli_query($db, "SELECT * FROM `lists`");
+    $db = new Database();
     // include "test.php";
 ?>
         <table class="table">
             <tbody>
-                <!-- <?php
+                <?php
                 foreach($lists as $lists){
                 ?>
                 <tr> 
@@ -65,7 +65,7 @@ session_start();
                 </tr>    
                 <?php
                 }
-                ?> -->
+                ?>
             </tbody>
         </table>
     </div>

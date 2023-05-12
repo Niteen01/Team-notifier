@@ -1,5 +1,4 @@
 <?php
-
 include"config.php";
 $db = new Database();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -25,5 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 $lists = $db->select('lists', '*', 'progress = 0');
+header("Location: ./home.php");
 
 ?>

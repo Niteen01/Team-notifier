@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 // MySQL connection settings
 class Database{
   private $host = 'localhost';
