@@ -42,16 +42,20 @@ session_start();
             </div>
         </div>
 
-<!------------------- reflecting data------------------------------------------------>
+<!---------------------- reflecting data------------------------------------------------>
 <?php
     include "config.php";
     $db = new Database();
-    // include "test.php";
+    $result=$db->select("lists","*" , );
+   
 ?>
         <table class="table">
             <tbody>
                 <?php
-                foreach($lists as $lists){
+                $rows = array();
+
+                while ($row = $result->fetch_assoc()) {
+                    $rows[] = $row;
                 ?>
                 <tr> 
                     <td><?php echo $row['title'] ?></td>

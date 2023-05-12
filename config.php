@@ -26,16 +26,10 @@ class Database{
 			$sql .= " WHERE $where";
 		}
 
-		$result = $this->conn->query($sql);
+		$result = mysqli_query($this->conn,$sql);
 
 		if ($result->num_rows > 0) {
-			$rows = array();
-
-			while ($row = $result->fetch_assoc()) {
-				$rows[] = $row;
-			}
-
-			return $rows;
+			return $result;
 		} else {
 			return null;
 		}
@@ -61,32 +55,9 @@ class Database{
 
 }
 
-
-
-
- 
-
-// Use of class by creating objects:
 // $db = new Database();
-// $db->Insert();
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//     $new_task = $_POST['new-task'];
-//     $tag = $_POST['tag'];
-//     $deadline = $_POST['deadline'];
-//     $reminder = $_POST['reminder'];
-//     $description = $_POST['description'];
 
-//     $data = array(
-//         'new_task' => $new_task,
-//         'tag' => $tag,
-//         'deadline' => $deadline,
-//         'reminder' => $reminder,
-//         'description' => $description
-//     );
-
-//     $db->insert('lists', $data);
-// }
-
+// print_r($lists=$db->select("lists","*" , ));
 
 
 // $lists = $db->select('lists', '*', 'progress = 0');
