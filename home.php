@@ -8,7 +8,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team-notifier</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style2.css">
 </head>
 <body>
     <div class="card">
@@ -52,13 +52,14 @@ session_start();
                 $rows = array();
                 while ($row = $result->fetch_assoc()) {
                     $rows[] = $row;
+                    $classname= ($row['progress']==0) ? 'container' :'container2';
                 ?>
-                <div class="container">
-                    <div><?php echo $row['title'] ?></div>
-                    <div><?php echo $row['tag'] ?></div>
-                    <div><?php echo $row['date'] ?></div>
-                    <div><?php echo $row['time'] ?></div>
-                    <div><?php echo $row['description'] ?></div>
+                <div class= <?php $classname; echo $classname?> >
+                    <div style="max-width:5rem; min-width:5rem"><?php echo $row['title'] ?></div>
+                    <div style="max-width:5rem; min-width:5rem"><?php echo $row['tag'] ?></div>
+                    <div style="max-width:5rem; min-width:5rem"><?php echo $row['date'] ?></div>
+                    <div style="max-width:5rem; min-width:5rem"><?php echo $row['time'] ?></div>
+                    <div style="max-width:5rem; min-width:5rem"><?php echo $row['description'] ?></div>
                     <div><a href="" class="progress">Inprogress</a></div>
                     <div><a href="" class="delete">Delete</a></div> 
                 </div>    
@@ -66,6 +67,6 @@ session_start();
                 }
                 ?>
     </div> 
-    <!-- <script src="./script.js"></script> -->
+    <!-------------------------<script src="./script.js"></script>-------------------------------------->
 </body>
 </html>
