@@ -1,23 +1,35 @@
-body{
-   
+body {
+
     padding: 0;
     background-color: #D9D9D9;
-    
+
 }
-.card{
+
+.card {
     margin: 3rem 2rem 3rem 2rem;
     background-color: #D9D9D9;
 }
-.header{
+
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     gap: 60%;
 }
-.account{
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: #fff;
+}
+
+.account {
     background-color: #ffff;
 }
-.nav{
+
+.nav {
     margin-top: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -25,17 +37,19 @@ body{
     display: flex;
     /* gap: 13rem; */
 }
-h1{
+
+h1 {
     display: flex;
     text-align: center;
     margin-top: 0;
     font-size: larger;
 }
-.see-post{
+
+.see-post {
     border: 1px solid black;
     max-width: fit-content;
     margin-left: 1rem;
-    padding:  0.2rem 1rem 0.2rem 1rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
     color: #ffff;
     background-color: #6AD759;
     justify-content: center;
@@ -43,12 +57,15 @@ h1{
 
 }
 
-.context-box{
+.context-box {
+    display: flex;
+    justify-content: space-between;
     margin-top: 3rem;
     padding: 1rem 2rem 1rem 2rem;
     background-color: #fff;
 }
-.upper-context-box{
+
+.upper-context-box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -56,19 +73,24 @@ h1{
     min-width: fit-content;
 }
 
-input[type="text"], select, input[type="date"], input[type="time"] {
+input[type="text"],
+select,
+input[type="date"],
+input[type="time"] {
     font-size: 10px;
     padding: 10px;
     border: 1px solid #CCC;
     border-radius: 5px;
     margin-right: 10px;
-  }
-  table {
+}
+
+/* table {
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
-  tr {
+} */
+
+/* tr {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -77,12 +99,14 @@ input[type="text"], select, input[type="date"], input[type="time"] {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
     margin-bottom: 10px;
-  }
-  .completed {
+} */
+
+.completed {
     text-decoration: line-through;
     color: #AAA;
-  }
-  .delete {
+}
+
+.delete {
     background-color: #FF4136;
     color: #FFF;
     border: none;
@@ -91,59 +115,69 @@ input[type="text"], select, input[type="date"], input[type="time"] {
     font-size: 16px;
     cursor: pointer;
     margin-left: 10px;
-  }
-  label {
-	color: #888;
-	font-size: 18px;
-	padding: 10px;
+}
+
+label {
+    color: #888;
+    font-size: 18px;
+    padding: 10px;
 }
 
 button {
-	float: right;
-	background: #555;
-	padding: 10px 15px;
-	color: #fff;
-	border-radius: 5px;
-	margin-right: 10px;
-	border: none;
+    float: right;
+    background: #555;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: none;
 }
-button:hover{
-	opacity: .7;
+
+button:hover {
+    opacity: .7;
 }
+
 .error {
-   background: #F2DEDE;
-   color: #A94442;
-   padding: 10px;
-   width: 95%;
-   border-radius: 5px;
-   margin: 20px auto;
+    background: #F2DEDE;
+    color: #A94442;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
 }
 
 .success {
-   background: #D4EDDA;
-   color: #40754C;
-   padding: 10px;
-   width: 95%;
-   border-radius: 5px;
-   margin: 20px auto;
+    background: #D4EDDA;
+    color: #40754C;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
 }
-#brand{
+
+#brand {
     text-align: center;
     color: #444;
 }
 
 h1 {
-	text-align: center;
-	color: #fff;
+    text-align: center;
+    color: #fff;
 }
 
 .ca {
-	font-size: 14px;
-	display: inline-block;
-	padding: 10px;
-	text-decoration: none;
-	color: #444;
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: #444;
 }
+
 .ca:hover {
-	text-decoration: underline;
-} 
+    text-decoration: underline;
+}
+
+table {
+    gap: 1rem;
+}
+

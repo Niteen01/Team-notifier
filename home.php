@@ -41,40 +41,31 @@ session_start();
                 
             </div>
         </div>
-
-<!---------------------- reflecting data------------------------------------------------>
+    <!---------------------- reflecting data------------------------------------------------>
 <?php
     include "config.php";
     $db = new Database();
     $result=$db->select("lists","*" , );
    
 ?>
-        <table class="table">
-            <tbody>
                 <?php
                 $rows = array();
-
                 while ($row = $result->fetch_assoc()) {
                     $rows[] = $row;
                 ?>
-                <tr> 
-                    <td><?php echo $row['title'] ?></td>
-                    <td><?php echo $row['tag'] ?></td>
-                    <td><?php echo $row['date'] ?></td>
-                    <td><?php echo $row['time'] ?></td>
-                    <td><?php echo $row['description'] ?></td>
-                    <td><a href="" class="progress">Inprogress</a></td>
-                    <td><a href="" class="delete">Delete</a></td>
-                    
-                </tr>    
+                <div class="container">
+                    <div><?php echo $row['title'] ?></div>
+                    <div><?php echo $row['tag'] ?></div>
+                    <div><?php echo $row['date'] ?></div>
+                    <div><?php echo $row['time'] ?></div>
+                    <div><?php echo $row['description'] ?></div>
+                    <div><a href="" class="progress">Inprogress</a></div>
+                    <div><a href="" class="delete">Delete</a></div> 
+                </div>    
                 <?php
                 }
                 ?>
-            </tbody>
-        </table>
-    </div>
-    
-  
-    <script src="./script.js"></script>
+    </div> 
+    <!-- <script src="./script.js"></script> -->
 </body>
 </html>
