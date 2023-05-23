@@ -52,20 +52,7 @@ class Database{
             return false;
         }
     }
-
 }
 
-// $db = new Database();
-
-// print_r($lists=$db->select("lists","*" , ));
-
-
-// $lists = $db->select('lists', '*', 'progress = 0');
-
-// foreach ($lists as $list) {
-// 	echo $list['title'] . ' - ' . $list['tag'] .$list['date'] .$list['time'] . $list['description'] . '<br>';
-// }
-
-// $db->mysqli_close();
 
 ?>

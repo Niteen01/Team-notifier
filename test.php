@@ -20,9 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 
-
-
-
 $lists = $db->select('lists', '*', 'progress = 0');
 header("Location: ./home.php");
 

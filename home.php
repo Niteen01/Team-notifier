@@ -8,7 +8,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team-notifier</title>
-    <link rel="stylesheet" href="./style2.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="card">
@@ -55,13 +55,13 @@ session_start();
                     $classname= ($row['progress']==0) ? 'container' :'container2';
                 ?>
                 <div class= <?php $classname; echo $classname?> >
-                    <div style="max-width:5rem; min-width:5rem"><?php echo $row['title'] ?></div>
-                    <div style="max-width:5rem; min-width:5rem"><?php echo $row['tag'] ?></div>
-                    <div style="max-width:5rem; min-width:5rem"><?php echo $row['date'] ?></div>
-                    <div style="max-width:5rem; min-width:5rem"><?php echo $row['time'] ?></div>
-                    <div style="max-width:5rem; min-width:5rem"><?php echo $row['description'] ?></div>
+                    <div class="child-container"><?php echo $row['title'] ?></div>
+                    <div class="child-container"><?php echo $row['tag'] ?></div>
+                    <div class="child-container"><?php echo $row['date'] ?></div>
+                    <div class="child-container"><?php echo $row['time'] ?></div>
+                    <div class="child-container"><?php echo $row['description'] ?></div>
                     <div><a href="" class="progress">Inprogress</a></div>
-                    <div><a href="" class="delete">Delete</a></div> 
+                    <div><button type="submit" name="deleted" id ="delete" value ="<?php echo $row['id'];?>"></div> 
                 </div>    
                 <?php
                 }
