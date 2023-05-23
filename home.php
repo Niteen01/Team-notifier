@@ -61,7 +61,7 @@ session_start();
                     <div class="child-container"><?php echo $row['time'] ?></div>
                     <div class="child-container"><?php echo $row['description'] ?></div>
                     <div><a href="" class="progress">Inprogress</a></div>
-                    <div><button type="submit" name="deleted" id ="delete" value ="<?php echo $row['id'];?>"></div> 
+                    <div><a href="delete.php?id=<?php echo $row['ID'];?>" class="delete">Delete</a></div> 
                 </div>    
                 <?php
                 }
