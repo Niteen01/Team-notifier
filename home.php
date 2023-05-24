@@ -8,7 +8,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team-notifier</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style3.css">
 </head>
 <body>
     <div class="card">
@@ -37,23 +37,38 @@ session_start();
                 <input type="submit" name="submit" value="submit">
                 </form>
             </div>
-            <div class="lower-context-box">
-                
-            </div>
         </div>
     <!---------------------- reflecting data------------------------------------------------>
+    <div class="top-header" >
+                <div class="child-container">Title</div>
+                <div class="child-container">Tag</div>
+                <div class="child-container">Date</div>
+                <div class="child-container">Time</div>
+                <div class="child-container">Details</div>
+                <div class="status">Status</div>
+                <div class="actions">Actions</div> 
+        </div>
+
 <?php
     include "config.php";
     $db = new Database();
     $result=$db->select("lists","*", );
-    $name=$_GET['name'];
+    // $name=$_GET['name'];
 
-?>
+?>         
                 <?php
                 $rows = array();
                 while ($row = $result->fetch_assoc()) {
                     $rows[] = $row;
-                    $classname=($row['progress']==0)?'container':'container2';
+                        if($row['progress']==0){
+                            $classname='container1';
+                        }
+                        else if($row['progress']==1){
+                            $classname='container2';
+                        }
+                        else{
+                            $classname='container3';
+                        }
                 ?>
                 <div class= <?php $classname; echo $classname?> >
                     <div class="child-container"><?php echo $row['title'] ?></div>
@@ -61,9 +76,10 @@ session_start();
                     <div class="child-container"><?php echo $row['date'] ?></div>
                     <div class="child-container"><?php echo $row['time'] ?></div>
                     <div class="child-container"><?php echo $row['description'] ?></div>
-                    <div><a href="progress.php?id=<?php echo $row["ID"]; ?>" class="progress">Inprogress <?php echo $name; ?></a></div>
+                    <div><a href="progress.php?id=<?php echo $row["ID"]; ?>" class="progress">Inprogress </a></div>
+                    <div><a href="fixed.php?id=<?php echo $row["ID"]; ?>" class="Fixed">Fixed </a></div>
                     <div><a href="delete.php?id=<?php echo $row['ID'];?>" class="delete">Delete</a></div> 
-                </div>    
+                </div> 
                 <?php
                 }
             ?>

@@ -16,7 +16,20 @@ body {
     justify-content: space-evenly;
     gap: 60%;
 }
-.container {
+.top-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: #fff;
+}
+.status{
+    /* min-width: rem;
+    max-width: 0rem; */
+    padding: 0 6rem 0 6rem;
+}
+.container1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -31,6 +44,32 @@ body {
     padding: 1rem;
     margin: 0.5rem;
     background-color: #f4d96c;
+}
+.container3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: #91e746;
+
+}
+.progress ,.Fixed{
+    padding: 0.2rem 0.3rem;
+    text-decoration: none;
+    background-color: #e6af68;
+    border-radius: 5px;
+    border: 0.1px  black;
+}
+.Fixed{
+    background-color: #9ade6d;
+}
+
+form{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 4rem;
 }
 
 .account {
@@ -92,22 +131,6 @@ input[type="time"] {
     margin-right: 10px;
 }
 
-/* table {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-} */
-
-/* tr {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FFF;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    margin-bottom: 10px;
-} */
 
 .completed {
     text-decoration: line-through;
@@ -122,7 +145,6 @@ input[type="time"] {
     padding: 5px 10px;
     font-size: 16px;
     cursor: pointer;
-    margin-left: 10px;
 }
 
 label {
@@ -190,7 +212,7 @@ h1 {
     min-width:5rem;
 }
 @media only screen and (max-width:700px){
-    .container {
+    .container1 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -210,9 +232,36 @@ h1 {
         align-items: center;
         background-color: #f4d96c;
     }
+    .container3{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+        margin: 0.5rem;
+        gap: 1rem;
+        align-items: center;
+        background-color: #91e746;
+    }
     .child-container{
         max-width:10rem;
         display: flex;
         justify-content: center;
+    }
+    .top-header{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        margin: 0.5rem;
+        background-color: #fff;
+    }
+    form{
+        display: flex;
+        margin-left: 3rem;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
     }
 }
