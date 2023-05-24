@@ -8,6 +8,5 @@ $id = $_GET['id'];
 $sql = "DELETE FROM lists WHERE ID='$id'";
 mysqli_query($connection,$sql);
 header("location:home.php");
-
 // }
 ?>

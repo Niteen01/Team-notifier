@@ -45,14 +45,15 @@ session_start();
 <?php
     include "config.php";
     $db = new Database();
-    $result=$db->select("lists","*" , );
-   
+    $result=$db->select("lists","*", );
+    $name=$_GET['name'];
+
 ?>
                 <?php
                 $rows = array();
                 while ($row = $result->fetch_assoc()) {
                     $rows[] = $row;
-                    $classname= ($row['progress']==0) ? 'container' :'container2';
+                    $classname=($row['progress']==0)?'container':'container2';
                 ?>
                 <div class= <?php $classname; echo $classname?> >
                     <div class="child-container"><?php echo $row['title'] ?></div>
@@ -60,12 +61,12 @@ session_start();
                     <div class="child-container"><?php echo $row['date'] ?></div>
                     <div class="child-container"><?php echo $row['time'] ?></div>
                     <div class="child-container"><?php echo $row['description'] ?></div>
-                    <div><a href="" class="progress">Inprogress</a></div>
+                    <div><a href="progress.php?id=<?php echo $row["ID"]; ?>" class="progress">Inprogress <?php echo $name; ?></a></div>
                     <div><a href="delete.php?id=<?php echo $row['ID'];?>" class="delete">Delete</a></div> 
                 </div>    
                 <?php
                 }
-                ?>
+            ?>
     </div> 
     <!-------------------------<script src="./script.js"></script>-------------------------------------->
 </body>

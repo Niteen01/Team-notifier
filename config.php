@@ -38,7 +38,7 @@ class Database{
 			return null;
 		}
 	}
-
+	
 	public function close()
 	{
 		$this->conn->close();
