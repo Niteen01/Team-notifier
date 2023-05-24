@@ -20,7 +20,17 @@ session_start();
             </div>
         </div>
         <div class="nav">
-            <div class="see-post">See Posts</div>  
+            <div class="see-post">See Posts</div> 
+            <div>
+            <form action="sorted.php" method="POST">
+            <label for="sort" class="sort">Sort by-</label>
+                        <select name="sortby" id = "Tags">
+                            <option value="frontend">Frontend</option>
+                            <option value="backend">Backend</option>
+                        </select>
+                        <input type="submit" value="submit">
+            </form>
+            </div> 
         </div>
         <div class="context-box">
             <div class="upper-context-box">
@@ -52,7 +62,14 @@ session_start();
 <?php
     include "config.php";
     $db = new Database();
-    $result=$db->select("lists","*", );
+    if(isset($_POST['sortedby'])){
+        $result=$db->select('lists ORDER BY tag ASC;', '*', '');
+    }
+    else{
+        $result=$db->select("lists","*", );
+    }
+        
+    
     // $name=$_GET['name'];
 
 ?>         

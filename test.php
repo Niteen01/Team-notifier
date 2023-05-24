@@ -19,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db->insert('lists', $data);
 }
 
-
 $lists = $db->select('lists', '*', 'progress = 0');
 header("Location: ./home.php");
 
