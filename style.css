@@ -16,6 +16,11 @@ body {
     justify-content: space-evenly;
     gap: 60%;
 }
+.nav-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .top-header{
     display: flex;
     flex-direction: row;
@@ -75,16 +80,41 @@ form{
 .account {
     background-color: #ffff;
 }
+.sort-menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 1rem;
+}
 
+.right-acc{
+    display: flex;
+    justify-content: space-around;
+    gap:1rem;
+    align-items: center;
+}
+.log-out{
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+    background-color: #f70e0a64;
+    color: #fff;
+    text-decoration: none;
+    
+}
 .nav {
     margin-top: 1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     background-color: #B5B5B5;
     display: flex;
+    justify-content: space-between;
     /* gap: 13rem; */
 }
-
+#submit{
+    border-radius: 5px;
+    padding: 7px 15px 7px 15px;
+}
 h1 {
     display: flex;
     text-align: center;
@@ -212,6 +242,23 @@ h1 {
     min-width:5rem;
 }
 @media only screen and (max-width:700px){
+    #submit{
+        border-radius: 5px;
+        padding: 5px 15px 5px 15px;
+    }
+
+    .right-acc{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap:0.2rem;
+        align-items: center;
+    }
+    .sort-menu{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
     .container1 {
         display: flex;
         flex-direction: column;

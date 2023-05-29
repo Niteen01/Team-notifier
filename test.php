@@ -15,11 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'time' => $time,
         'description' => $desc
     );
-
     $db->insert('lists', $data);
 }
-
-$lists = $db->select('lists', '*', 'progress = 0');
-header("Location: ./home.php");
+// $lists = $db->select('lists', '*', 'progress = 0');
+ header("Location: ./home.php");
 
 ?>

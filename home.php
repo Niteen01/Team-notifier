@@ -8,27 +8,27 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team-notifier</title>
-    <link rel="stylesheet" href="./style3.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="card">
         <div class="header">
             <h1 id="brand">Team Notifier</h1>
-            <div>
+            <div class="right-acc">
             <?php echo $_SESSION['name']?>
-            <a href="logout.php">Logout</a>
+            <a class="log-out" href="logout.php">Logout</a>
             </div>
         </div>
         <div class="nav">
-            <div class="see-post">See Posts</div> 
+            <div class=nav-container><div class="see-post">See Posts</div></div> 
             <div>
-            <form action="sorted.php" method="POST">
+            <form class= "sort-menu" action="sorted.php" method="POST">
             <label for="sort" class="sort">Sort by-</label>
                         <select name="sortby" id = "Tags">
                             <option value="frontend">Frontend</option>
                             <option value="backend">Backend</option>
                         </select>
-                        <input type="submit" value="submit">
+                        <input type="submit" value="submit" id="submit">
             </form>
             </div> 
         </div>
@@ -44,7 +44,7 @@ session_start();
                     <input type="date" name="deadline" id="deadline">
                     <input type="time" name="time" id="reminder">
                     <input type="text" name="desc" id="description" placeholder="describe a bit">
-                <input type="submit" name="submit" value="submit">
+                <input type="submit" name="submit" value="submit" id="submit">
                 </form>
             </div>
         </div>
@@ -60,15 +60,25 @@ session_start();
         </div>
 
 <?php
+    //include "sorted.php";
     include "config.php";
     $db = new Database();
-    if(isset($_POST['sortedby'])){
-        $result=$db->select('lists ORDER BY tag ASC;', '*', '');
+    //$result = sorted();
+    if(isset($_GET['value'])){
+    $sortby=$_GET['value'];
+        if($sortby=='frontend'){
+        $result = $db->select('lists ORDER BY tag DESC', '*', );
+        }
+        else{
+        $result = $db->select('lists ORDER BY tag ASC', '*', );
+        }
+    // echo $result;
     }
     else{
         $result=$db->select("lists","*", );
-    }
-        
+    } 
+
+    
     
     // $name=$_GET['name'];
 
