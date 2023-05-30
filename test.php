@@ -29,24 +29,19 @@ else if($inputTimestamp <= $currentTimestamp){
     header("Location: home.php?error=Date must be of future");
     exit();
     }
-}
-
 else{
     $data = array(
-        'title' => $newtask,
         'tag' => $tag,
-        'date' => $deadline,
+        'title' => $newtask,
         'time' => $time,
+        'date' => $deadline,
         'description' => $desc,
         'addedby' =>"added by-".$addedby
-
-    );
-    $db->insert('lists', $data);
-            header("Location: home.php?success=added task successfully");
-         exit();
-    }
-// 
-// $lists = $db->select('lists', '*', 'progress = 0');
- header("Location: ./home.php");
-
+        );
+        $db->insert('lists', $data);
+        $lists = $db->select('lists', '*', 'progress = 0');
+        header("Location: home.php?success=added task successfully");
+        exit();
+        }
+}
 ?>
